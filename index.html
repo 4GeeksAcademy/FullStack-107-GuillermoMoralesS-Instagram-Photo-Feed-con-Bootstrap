@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Feed with Bootstrap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-1" href="#">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createPostModal">
+            Create a New Post
+          </button>
+
+          <div class="dropdown">
+            <button class="btn bg-secondary text-white rounded p-2 dropdown-toggle" type="button" id="settingsDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accessibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-transparent text-grey">
+          <h5 class="modal-title" id="createPostModalLabel">Create a New Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Caption</p>
+          <textarea class="form-control mb-3" rows="3" placeholder="Write a caption..."></textarea>
+
+          <div class="d-flex gap-2">
+            <button
+              class="btn btn-outline-border border-secondary-subtle text-black btn-light shadow-sm align-items-center d-flex "
+              style="width: 40px; height: 35px;">
+              <i class="fa-solid fa-camera"></i>
+            </button>
+            <button
+              class="btn btn-outline-border border-secondary-subtle text-black btn-light shadow-sm align-items-center d-flex "
+              style="width: 40px; height: 35px;">
+              <i class="fa-solid fa-map-marker-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Publish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <nav>
+      <div class="nav nav-pills my-4 justify-content-center" id="pills-tab" role="tablist">
+        <button class="nav-link active bg-light text-dark me-2" id="pills-stacked-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-stacked" type="button" role="tab" aria-controls="pills-stacked" aria-selected="true">
+          <i class="fa-solid fa-square"></i>
+        </button>
+        <button class="nav-link bg-light text-dark" id="pills-displayed-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-displayed" type="button" role="tab" aria-controls="pills-displayed"
+          aria-selected="false">
+          <i class="fa-solid fa-table-cells"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-stacked" role="tabpanel" aria-labelledby="pills-stacked-tab">
+
+        <div class="card-group">
+          <div class="card bg-transparent border-0">
+            <img src="https://picsum.photos/id/339/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+          <div class="card bg-transparent border-0">
+            <img src="https://picsum.photos/id/96/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+          <div class="card bg-transparent border-0">
+            <img src="https://picsum.photos/id/183/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+        </div>
+
+        <div class="card-group">
+          <div class="card bg-transparent border-0">
+            <img src="https://picsum.photos/id/193/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+          <div class="card bg-transparent border-0">
+            <img src="https://picsum.photos/id/239/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+          <div class="card bg-transparent border-0">
+            <img src="https://picsum.photos/id/278/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+        </div>
+
+        <div class="card-group">
+          <div class="card bg-transparent border-0 mb-2">
+            <img src="https://picsum.photos/id/360/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+          <div class="card bg-transparent border-0 mb-2">
+            <img src="https://picsum.photos/id/368/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+          <div class="card bg-transparent border-0 mb-2">
+            <img src="https://picsum.photos/id/392/350/250" class="card-img-top p-2" alt="..." />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="pills-displayed" role="tabpanel" aria-labelledby="pills-displayed-tab">
+
+        <div class="d-flex justify-content-center">
+          <div class="card mb-5" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Promenade through the forest.</span>
+              <span class="text-end fs-7">08/25</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/339/500/300" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">1K likes</span>
+              <span class="fw-normal mb-2">Very peacefull.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Gamming</span>
+              <span class="text-end fs-7">03/25</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/96/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">345 Likes</span>
+              <span class="fw-normal mb-2">Playing GTA 6 on my ps2.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Volkswagen</span>
+              <span class="text-end fs-7">01/25</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/183/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">555 Likes</span>
+              <span class="fw-normal mb-2">Das Auto.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Cambridge</span>
+              <span class="text-end fs-7">11/24</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/193/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">25 Likes</span>
+              <span class="fw-normal mb-2">This is where I completed my studies.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 700px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Dandelion</span>
+              <span class="text-end fs-7">09/24</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/239/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">200 Likes</span>
+              <span class="fw-normal mb-2">Nice allergy.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Road Trip</span>
+              <span class="text-end fs-7">05/24</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/278/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">38 Likes</span>
+              <span class="fw-normal mb-2">Driving my Ferrari.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Flowers</span>
+              <span class="text-end fs-7">03/24</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/360/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">348 Likes</span>
+              <span class="fw-normal mb-2">Green whispers of nature, quietly breathing life into every corner.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">Beautiful Landscape</span>
+              <span class="text-end fs-7">01/24</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/368/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">3 Likes</span>
+              <span class="fw-normal mb-2">Where the earth meets the sky, peace finds its voice.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="card mb-3" style="width: 500px; height: 450px;">
+            <div class="card-header bg-transparent d-flex justify-content-between">
+              <span class="text-start fw-bold fs-5">San Francisco</span>
+              <span class="text-end fs-7">11/23</span>
+            </div>
+            <div class="card-body p-0">
+              <img src="https://picsum.photos/id/392/350/250" class="img-fluid w-100 h-100 object-fit-cover"
+                alt="Camino Forestal" style="aspect-ratio: 5 / 3;" />
+            </div>
+            <div class="card-footer bg-transparent d-flex flex-column">
+              <span class="fw-bold">15 Likes</span>
+              <span class="fw-normal mb-2">I've never been there in my life but it's cool.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
